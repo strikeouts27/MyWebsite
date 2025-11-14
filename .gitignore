@@ -1,1 +1,6 @@
 .git
+[Oo]bj/
+[Bb]in/
+/MyWebsite/.vs
+/MyWebsite/obj
+/MyWebsite/*.user
