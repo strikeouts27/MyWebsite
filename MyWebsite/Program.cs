@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Builder;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,15 +22,17 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+app.MapAreaControllerRoute(
+    name: "Help",
+    areaName: "Help",
+    pattern: "Help/{controller=Home}/{action=Help}/{id?}")
+    .WithStaticAssets(); 
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-// {} are parameters that you set equal / is the divider 
-app.MapControllerRoute(
-    name: "Help",
-    pattern: "Help/{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets(); 
+
 
 app.Run();
