@@ -25,5 +25,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+// {} are parameters that you set equal / is the divider 
+app.MapControllerRoute(
+    name: "Help",
+    pattern: "Help/{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets(); 
 
 app.Run();
