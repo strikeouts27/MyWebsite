@@ -4,6 +4,7 @@ using MyWebsite.Models;
 
 namespace MyWebsite.Areas.Help.Controllers;
 
+[Route("Help/{Controller}/{action}/{id?}")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -17,7 +18,7 @@ public class HomeController : Controller
     // This index falls under the help route. 
     // putting this tag eliminates this index method from being the default route for the project and instead
     // specifies this is the default route for the areas section.
-    [Area("Help")]
+
     public IActionResult Index()
     {
         return View();
