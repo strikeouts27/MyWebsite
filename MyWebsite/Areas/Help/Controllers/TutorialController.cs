@@ -25,4 +25,14 @@ public class TutorialController : Controller
     {
         return View();
     }
+
+    public IActionResult Page2()
+    {
+        return View();
+    }
+
+    public IActionResult Page3()
+    {
+        return View();
+    }
 }

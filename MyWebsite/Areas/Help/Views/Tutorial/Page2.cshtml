@@ -1,1 +1,15 @@
-<h1>Page2</h1>
+@{
+    ViewData["Title"] = "Tutorial Page 2";
+}
+
+
+<h1>Tutorial - Page2</h1>
+
+<div>
+    <p>Here is the second thing you need to know about my website</p>
+</div>
+<div>
+    <a asp-area="Help" asp-controller="Tutorial" asp-action="Page1" class="btn btn-dark">Prev</a>
+
+    <a asp-area="Help" asp-controller="Tutorial" asp-action="Page3" class="btn btn-dark">Next</a>
+</div>

@@ -1,47 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MyWebsite</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MyWebsite.styles.css" asp-append-version="true" />
-</head>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-
-
-<body>
-<!-- About --> 
-<!--asp- action specifies which action method will be utlized.  -->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyWebsite</a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="Help" asp-controller="Home" asp-action="Index">Help Home</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    @* Addefd header for main help page *@
+    <H1>Help Page!</H1>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                @* Nav link to home page (index) for help area *@
+                <a class="nav-link @(ViewData["Title"] == "Home" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+        @* Nav link to tutorial page (page1) for help area *@
+            <li class="nav-item">
+                <a class="nav-link @(((string)ViewData["Title"]).Contains("Tutorial") ? "active" : "")" asp-area="Help" asp-controller="Tutorial" asp-action="Page1">Tutorial</a>
+            </li>
+        </ul>
+    </nav>
 
     <div class="container">
-        <main role="main" class="pb-3">
             @RenderBody()
-        </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - MyWebsite
-        </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
