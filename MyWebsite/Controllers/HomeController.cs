@@ -25,7 +25,16 @@ public class HomeController : Controller
 
     public IActionResult Contact()
     {
-        return View();
+        
+
+        var contacts = new Dictionary<string, string>
+        {
+            { "Phone", "555-123-4567" },
+            { "Email", "me@mywebsite.com" },
+            { "Facebook", "facebook.com/mywebsite" }
+        };
+        
+        return View(contacts);
     }
 
 

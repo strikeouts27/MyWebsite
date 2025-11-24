@@ -4,22 +4,12 @@
 
 <div>
     <h2>Contact Me</h2>
-    <div>
-        <!-- Spans are inline elements and do not push other elements down. unlike divs --> 
-        <span>Phone</span>
-        <span>555-123-4657</span>
-    </div>
-
-    <div>
-        <!--spans are the columns  --> 
-        <span>Email</span>
-        <span>me@mywebsite.com</span>
-    </div>
-
-    <div>
-        <span>Facebook</span>
-        <span>facebook.com/mywebsite</span>
-    </div>
-
+    <ul>
+        @* we will loop through the model (dictionary) to display the information *@
+        @foreach (KeyValuePair<string, string> contact in Model)
+        {
+            <li><strong>@contact.Key</strong> @contact.Value</li>
+        }
+    </ul>
 </div>
 

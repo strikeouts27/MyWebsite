@@ -1,3 +1,21 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @* Addefd header for main help page *@
+    <H1>Help Page!</H1>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                @* Nav link to home page (index) for help area *@
+                <a class="nav-link @(ViewData["Title"] == "Home" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+        @* Nav link to tutorial page (page1) for help area *@
+            <li class="nav-item">
+                <a class="nav-link @(((string)ViewData["Title"]).Contains("Tutorial") ? "active" : "")" asp-area="Help" asp-controller="Tutorial" asp-action="Page1">Tutorial</a>
+            </li>
+        </ul>
+    </nav>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,19 +61,5 @@
     </header>
 
     <div class="container">
-        <main role="main" class="pb-3">
             @RenderBody()
-        </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - MyWebsite
-        </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
